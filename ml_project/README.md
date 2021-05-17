@@ -5,9 +5,9 @@ Example of ml classification project (https://www.kaggle.com/ronitf/heart-diseas
 
 Installation: 
 ~~~
-python -m venv .venv
-source .venv/bin/activate
 cd ml_project
+python3.8 -m venv venv
+source venv/bin/activate
 pip install -e .
 ~~~
 Usage:
