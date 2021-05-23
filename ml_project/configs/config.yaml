@@ -1,0 +1,36 @@
+do_train: true
+do_predict: true
+
+train_params:
+  train_data_path: "data/heart.csv"
+  splitting_params:
+    val_size: 0.1
+    random_state: 3
+  target_col: "target"
+  train_metric_path: "models/train_metrics.json"
+
+transformer:
+  builder: #"transform_pipelines.sample_pipeline"
+
+defaults:
+  - model: rf
+
+bin_model_path: "models/model_pipeline.pkl"
+
+test_params:
+  predict_data_path: "data/heart.csv"
+  out_predict_path: "models/test_predict.csv"
+  target_col: "target"
+  predict_metric_path: "models/test_metrics.json"
+
+hydra:
+  job:
+    name: heart_clf
+  run:
+    dir: outputs/${hydra.job.name}
+
+  job_logging:
+    root:
+      handlers:
+        #- console
+        - file
