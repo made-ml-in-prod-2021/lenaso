@@ -1,0 +1,13 @@
+scikit-learn==0.24.1
+pandas==1.1.5
+fastapi==0.63.0
+uvicorn==0.13.4
+
+#for make_request sample data
+freddy==3.0.1
+requests==2.25.1
+
+# for tests:
+pytest==6.2.1
+
+
